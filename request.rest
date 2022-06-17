@@ -1,0 +1,27 @@
+GET http://localhost:5001/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidmluYXkiLCJpYXQiOjE2NTQ1NTEzNTUsImV4cCI6MTY1NDU1MTM3NX0.kfJnBPbZPigKJp8F-z4s4OF4VKlO3YegiKrpHIL7WcU
+###
+GET http://localhost:5001/todos?page=2&size=2
+###
+POST http://localhost:5002/login
+Content-Type: application/json
+
+{
+    "username": "vinay"
+}
+
+###
+POST http://localhost:5002/get-new-token
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidmluYXkiLCJpYXQiOjE2NTQ1NTEzMjJ9.7HdiMhINsYbAwC0Uf9SkKSLHr0akfX0Z_DU2a5GC2TI"
+}
+
+###
+DELETE http://localhost:5002/logout
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidmluYXkiLCJpYXQiOjE2NTQ1NTE4NjUsImV4cCI6MTY1NDU1MTg4NX0.ts-9HZu34jaCaHTY38vcxxrN6vDYAPc2xLYZtWKLO7k"
+}
