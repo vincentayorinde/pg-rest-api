@@ -27,7 +27,7 @@ router.post("/login", async (req, res) => {
         .status(400)
         .json({ success: false, data: { message: "Incorrect credentials" } });
 
-    //  Send back JWT
+    //  Send back JWT 
     let tokens = jwtTokens(users.rows[0]);
     res.cookie("refresh_token", tokens.refreshToken, { httpOnly: true, sameSite: 'none', secure: true });
     return res.status(200).json({ success: true, data: { tokens } });
