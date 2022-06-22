@@ -1,7 +1,6 @@
 import express from "express";
 import * as dotenv from "dotenv";
 import Joi from "joi";
-import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import { dirname, join } from "path";

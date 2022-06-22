@@ -1,12 +1,13 @@
 import pg from "pg";
-
+import * as dotenv from "dotenv";
+dotenv.config();
 const { Pool } = pg;
 const developmentPoolConfig = {
-  user: "postgres",
-  password: "password1",
-  database: "todo_database",
-  host: "localhost",
-  post: 5432,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  host: process.env.DB_HOST,
+  post: process.env.DB_PORT,
 };
 
 const poolConfig = process.env.DATABASE_URL
