@@ -5,7 +5,7 @@ const { Pool } = pg;
 const developmentPoolConfig = {
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
+  database: process.env.NODE_ENV === 'test' ? process.env.TEST_DB_NAME : process.env.DB_NAME,
   host: process.env.DB_HOST,
   post: process.env.DB_PORT,
 };

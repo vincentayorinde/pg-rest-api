@@ -20,10 +20,14 @@ const createUser = async (req, res) => {
       email,
       hashPassword,
     ]);
-    res.status(200).json({ success: true, data: newUser.rows[0] });
+    res.status(201).json({ success: true, data: newUser.rows[0] });
   } catch (error) {
     res.status(500).json({ success: false, data: error });
   }
 };
 
-export default { getUsers, createUser };
+const testUser =  async(req, res) => {
+  res.sendStatus(200)
+};
+
+export default { getUsers, createUser, testUser };

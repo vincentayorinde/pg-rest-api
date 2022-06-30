@@ -2,12 +2,13 @@
   "name": "pg-rest-api",
   "version": "1.0.0",
   "description": "test api for pg and express",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "nodemon index.js",
-    "start": "node index.js"
+    "test": "NODE_ENV=test NODE_OPTIONS=--experimental-vm-modules jest --watchAll",
+    "start:dev": "nodemon server.js",
+    "start": "node server.js",
+    "seed": "node seed.js"
   },
   "author": "vinay",
   "license": "ISC",
@@ -21,5 +22,9 @@
     "jsonwebtoken": "^8.5.1",
     "nodemon": "^2.0.16",
     "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "jest": "^28.1.1",
+    "supertest": "^6.2.3"
   }
 }
